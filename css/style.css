@@ -1,0 +1,35 @@
+  body {
+    text-align: center;
+    background: #f2bbd6;
+    color: #7d3e8c;
+  }
+  h1 {
+    font-size: 56px;
+    font-family: sniglet, sans-serif;
+    margin-bottom: 10px;
+  }
+  #board {
+    height: 501px;
+    width: 501px;
+    padding: 0;
+    margin: 20px auto;
+    background-color: #a8d6d1;
+  }
+  #board li {
+    display: block;
+    width: 33.33333%;
+    height: 33.33333%;
+    float: left;
+    margin: 0;
+    box-shadow: inset -5px -5px 0px 0px rgba(255,255,255,0.2);
+  }
+
+  li.x {
+    background: url(../images/lsp.png) no-repeat;
+    background-size: cover;
+  }
+
+  li.o {
+    background: url(../images/pb.png) no-repeat;
+    background-size: cover;
+  }
