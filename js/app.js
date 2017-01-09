@@ -1,6 +1,7 @@
 (function() {
-
+  //
   var squares = document.querySelectorAll('#board li');
+  var resetButton = document.getElementById('playAgain');
   var movesCounter = 0;
   var won = false;
   var boardState = [];
@@ -14,11 +15,10 @@
    * At the start each player is 3 moves away from winning.
    * When a player captures a position, we decrease the count for the corresponding win states.
    * Those win states become unavailable to the other player, so we set them to null.
+   *
+   * This is initialised in resetGame().
    */
-  var playerProgress = {
-    x: [3, 3, 3, 3, 3, 3, 3, 3],
-    o: [3, 3, 3, 3, 3, 3, 3, 3]
-  };
+  var playerProgress = null;
 
     /**
      * Maps board positions to the win states they belong to,
@@ -40,10 +40,18 @@
 
     for (var i=0; i<9; i++) {
       boardState[i] = null;
+      markPosition('', i);
     }
-    // @todo: reset playerProgress and classes.
-  }
 
+    playerProgress = {
+      x: [3, 3, 3, 3, 3, 3, 3, 3],
+      o: [3, 3, 3, 3, 3, 3, 3, 3]
+    };
+
+    won = false;
+    lockPlay = false;
+    movesCounter = 0;
+  }
 
   /**
    * Determines the
@@ -217,6 +225,8 @@
     }
   }
 
+  resetButton.onclick = resetGame;
+
   for (var i=0; i<squares.length; i++) {
     squares[i].onclick = (function(position) {
       return function () {
@@ -233,6 +243,11 @@
           // Prevent user input during computer turn.
           lockPlay = true;
           setTimeout(computerMove, 400);
+        }
+        if (movesCounter == 9) {
+          if (!won) {
+            window.location = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+          }
         }
       };
     })(i);

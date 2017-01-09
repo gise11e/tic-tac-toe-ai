@@ -2,12 +2,25 @@
 <html>
 <head>
   <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
   <script src="http://use.edgefonts.net/sniglet.js"></script>
 </head>
 <body>
-  <h1>Tic-Tac-Toe</h1>
-  <ol id="board">
+  <h1 id="ttt">t . t . t</h1>
+  <!-- <div class="chooseButtons">
+  <div class="choosePlay" id="playerX">
+    <p id="x">var x = black;</p>
+  </div>
+  <div class="choosePlay" id="playerO">
+    <p id="o">var o = red;</p>
+  </div>
+</div> -->
+
+  <div class="reset">
+    <p id="playAgain">play again</p>
+  </div>
+    <ol id="board">
     <li></li>
     <li></li>
     <li></li>
@@ -17,7 +30,7 @@
     <li></li>
     <li></li>
     <li></li>
-  </ol>
+    </ol>
   <script src="js/app.js" charset="utf-8"></script>
 </body>
 </html>
