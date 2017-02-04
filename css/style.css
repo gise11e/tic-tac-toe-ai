@@ -1,18 +1,24 @@
 body {
   background-color:rgb(255, 254, 224);
-    /*background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%,rgba(193,193,193,1) 100%)  fixed;*/
+
 }
 
 #board li.x {
-    display: inline-block;
-    font-size: 25px;
-    color: white;
+  display: inline-block;
+  font-size: 25px;
+  color: white;
+  background-color: rgb(252, 250, 126);
+  -webkit-transform: scale3d(1, 1, 0.7) translateZ(100px);
+  transform: scale3d(1, 1, 0.7) translateZ(100px);
 }
 
 #board li.o {
-    display: inline-block;
-    font-size: 25px;
-    color: white;
+  display: inline-block;
+  font-size: 25px;
+  color: white;
+  background-color: rgb(63, 106, 109);
+  -webkit-transform: scale3d(1, 1, 0.7) translateZ(100px);
+  transform: scale3d(1, 1, 0.7) translateZ(100px);
 }
 
 .reset {
@@ -75,9 +81,7 @@ body {
 }
 /* Top */
 #board li {
-    /*display: inline-block;*/
     background-color: rgb(252, 180, 126);
-    /*background-color: rgba(255, 210, 0, .9);*/
     position: relative;
     -webkit-transform: scale3d(1, 1, .5) translateZ(100px);
     -webkit-transform-style: preserve-3d;
@@ -86,14 +90,11 @@ body {
 /* Left */
 #board li:after {
   background-color: rgb(252, 180, 126);
-    /*width: 40px;*/
     -webkit-transform: rotateX(-90deg) translateY(100px);
     -webkit-transform-origin: 100% 100%;
 }
 /* Right */
 #board li:before {
-    /*display: inline-block;*/
-    /*width: 20px;*/
     background-color: rgb(252, 180, 126);
     -webkit-transform: rotateY(90deg) translateX(100px);
     -webkit-transform-origin: 100% 0;
@@ -101,7 +102,6 @@ body {
 
 .reset:hover {
     -webkit-transform: scale3d(1, 1, 1);
-
     -webkit-transition: -webkit-transform 0.2s, background 0.8s, box-shadow 0.8s;
           transition: transform 0.2s, background 0.8s, box-shadow 0.8s;
 }
@@ -114,19 +114,6 @@ body {
           transition: transform 0.2s, background 0.8s, box-shadow 0.8s;
 }
 
-#board li.x {
-    /*background-color: rgba(0, 0, 0, .9);*/
-    background-color: rgb(252, 250, 126);
-    -webkit-transform: scale3d(1, 1, 0.7) translateZ(100px);
-          transform: scale3d(1, 1, 0.7) translateZ(100px);
-}
-
-#board li.o {
-  background-color: rgb(63, 106, 109);
-    /*background-color: rgba(230, 0, 0, .9);*/
-    -webkit-transform: scale3d(1, 1, 0.7) translateZ(100px);
-          transform: scale3d(1, 1, 0.7) translateZ(100px);
-}
 
 .winnerx {
     background-color: rgba(0, 0, 0, 1);
@@ -138,4 +125,21 @@ body {
     background-color: rgba(230, 0, 0, 1);
     -webkit-transform: scale3d(1, 1, 2) translateZ(100px);
           transform: scale3d(1, 1, 2) translateZ(100px);
+}
+
+@media (max-width: 600px) {
+  #board  {
+    list-style: none;
+    padding: 0;
+    background-size: 90%;
+    height: 21em;
+    left: 50%;
+    margin: -8.5em;
+    position: absolute;
+    top: 50%;
+    width: 21em;
+    -webkit-transform: rotateX(45deg) rotateZ(45deg);
+    -webkit-transform-style: preserve-3d;
+  }
+
 }
